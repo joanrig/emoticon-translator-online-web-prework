@@ -1,7 +1,13 @@
-# require modules here
+require "pry"
+require "yaml"
 
-def load_library
-  # code goes here
+
+def load_library(file_path)
+  output = {get_meaning:{}, get_emoticon:{}}
+  emoticons = YAML.load_file(file_path)
+      
+  output
+  #binding.pry
 end
 
 def get_japanese_emoticon
