@@ -1,24 +1,20 @@
 require "pry"
 require "yaml"
 
-
 def load_library(file_path)
-  result = {"get_meaning":{}, "get_emoticon":{}}
+  get_meaning, get_emoticon = {}, {}
   emoticons = YAML.load_file(file_path)
  
-# emos[0] = american emo 
-# emos[1] = japanese emo 
- 
-  emoticons.each do |meaning, emos|
-    result["get_meaning"] = emos[1]
-    binding.pry
-    result["get_emoticon"][emos[1]] = meaning
+  #emos[0] = usa_emo 
+  #emos[1] = japanese_emo
     
-    result["get_emoticon"] = emos[0]
-    result["get_emoticon"]emos[0] = emos[1]
+  emoticons.each do |meaning, emos|
+    get_meaning[emos[1]] = meaning
+    get_emoticon[emos[0]] = emos[1]
   end
-  result
   
+  result = {"get_meaning" => get_meaning, "get_emoticon" => get_emoticon}
+  result
 end
 
 def get_japanese_emoticon

@@ -1,3 +1,4 @@
+Resources
 
 
 # Emoticon Translator
