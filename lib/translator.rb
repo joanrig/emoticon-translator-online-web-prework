@@ -45,7 +45,8 @@ def get_japanese_emoticon(file_path, emoji)
   end
   
   if answer == NIL
-    puts "Sorry, that emoticon was not found"
+    apology = "Sorry, that emoticon was not found"
+    apology
   else
     answer
   end
@@ -53,6 +54,21 @@ def get_japanese_emoticon(file_path, emoji)
 end
 
 
-def get_english_meaning
-  # code goes here
+def get_english_meaning(file_path, emoji)
+  emoticons = load_library(file_path)
+  answer = NIL
+  
+  emoticons["get_meaning"].each do |j_emoji, e_meaning|
+    if emoji == j_emoji
+      answer = e_meaning
+    end
+  end
+  
+  if answer == NIL
+    apology =  "Sorry, that emoticon was not found"
+    apology
+  else
+    answer
+  end
+#binding.pry
 end
